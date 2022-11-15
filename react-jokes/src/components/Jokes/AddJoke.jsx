@@ -21,7 +21,7 @@ const AddJoke = () => {
       const joke = {
          "content":jokeContent,
          "category":jokeCategory,
-         "date":Date.now()
+         "date": new Date(Date.now()).toDateString()
       }
       createJoke(joke)
       setJokeContent('')
