@@ -1,5 +1,17 @@
+import { useContext } from "react"
+import { Context as JokesContext } from '../../contexts/JokesContext'
+
 const ListJokes = () => {
-    return <p>LISTJOKES</p>
+
+    console.log("PASSE");
+
+    const { jokes } = useContext(JokesContext)
+
+    return (
+        <>
+            {jokes.map((joke) => <div>{joke.content}</div>)}
+        </>
+    )
 }
 
 export default ListJokes
