@@ -2,10 +2,17 @@
     "jokes": [
         {
             "id": 1,
-            "content": "HAHAHA",
-            "category": "Hitler",
+            "content": "joke1",
+            "category": "haha",
             "like": 3,
-            "date": "date"
+            "date": "date1"
+        },
+        {
+            "id": 2,
+            "content": "joke2",
+            "category": "haha",
+            "like": 12,
+            "date": "date2"
         }
     ],
     "users": [

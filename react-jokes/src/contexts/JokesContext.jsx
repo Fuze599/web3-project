@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useEffect } from "react"
-import { v4 as uuidv4 } from 'uuid';
-import JokesAPI from "services/Jokes";
+import { v4 as uuidv4 } from 'uuid'
+import JokesAPI from "../services/Jokes"
 
 const Context = React.createContext(null)
 		

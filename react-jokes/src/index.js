@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router } from "react-router-dom"
-import App from 'components/App/App'
+import AppLoader from 'components/App/AppLoader'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <Router>
-        <App />
-    </Router>
+  <React.StrictMode>
+    <AppLoader />
+  </React.StrictMode>
 )
