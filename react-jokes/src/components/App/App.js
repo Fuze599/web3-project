@@ -3,7 +3,6 @@ import Home from "components/Home/Home"
 import AddJoke from "components/Jokes/AddJoke"
 import ListJokes from "components/Jokes/ListJokes"
 import OneJoke from "components/Jokes/OneJoke"
-import Registration from "components/Registration/Registration"
 import { Routes, Route, Link } from "react-router-dom"
 
 const App = () => {
