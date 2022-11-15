@@ -1,25 +1,25 @@
 {
-    "jokes": [
-        {
-            "id": 1,
-            "content": "joke1",
-            "category": "haha",
-            "like": 3,
-            "date": "date1"
-        },
-        {
-            "id": 2,
-            "content": "joke2",
-            "category": "haha",
-            "like": 12,
-            "date": "date2"
-        }
-    ],
-    "users": [
-        {
-            "id": 1,
-            "pseudo": "eric",
-            "password": "eric"
-        }
-    ]
+  "jokes": [
+    {
+      "id": 1,
+      "content": "joke1",
+      "category": "haha",
+      "like": 3,
+      "date": "date1"
+    },
+    {
+      "id": 2,
+      "content": "joke2",
+      "category": "haha",
+      "like": 12,
+      "date": "date2"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "pseudo": "eric",
+      "password": "eric"
+    }
+  ]
 }
