@@ -9,11 +9,13 @@ import { Context as JokesContext } from '../../contexts/JokesContext'
 
 const App = () => {
 
-  const { getJoke } = useContext(JokesContext)
+  const { jokes } = useContext(JokesContext)
+
+  const jokeById = (id) => jokes.find(a => a.id === id)
   
   const match = useMatch('/jokes/:id')
   const joke = match
-    ? getJoke(Number(match.params.id))
+    ? jokeById(Number(match.params.id))
     : null
 
   return (

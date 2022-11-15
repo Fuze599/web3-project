@@ -1,9 +1,6 @@
-import { useContext } from "react"
-import { Context as JokesContext } from '../../contexts/JokesContext'
-
 const JokeDetail = (joke) => {
 
-    console.log(joke)
+    console.log(joke.content);
 
     return (
         <>
