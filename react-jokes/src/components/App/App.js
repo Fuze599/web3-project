@@ -10,7 +10,6 @@ const App = () => {
 
   return (
     <div>
-      <Registration></Registration>
       <div>
         <Link to="/">jokes</Link>
         <Link to="/create">create new</Link>
