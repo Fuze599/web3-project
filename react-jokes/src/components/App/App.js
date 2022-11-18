@@ -4,17 +4,8 @@ import AddJoke from "components/Jokes/AddJoke"
 import ListJokes from "components/Jokes/ListJokes"
 import JokeDetail from "components/Jokes/JokeDetail"
 import { Routes, Route, Link } from "react-router-dom"
-// import { useContext } from "react"
-// import { Context as JokesContext } from '../../contexts/JokesContext'
 
 const App = () => {
-
-  // const { jokes } = useContext(JokesContext)
-  // const match = useMatch('/jokes/:id')
-  //   const jokeById = (id) => jokes.find(a => a.id === id)
-  //   const joke = match
-  //     ? jokeById(Number(match.params.id))
-  //     : null
 
   return (
     <div>

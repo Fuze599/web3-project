@@ -1,26 +1,35 @@
 {
   "jokes": [
     {
-      "id": 1,
-      "content": "joke1",
-      "category": "haha",
-      "like": 3,
-      "date": "date1"
+      "content": "joke1 farce",
+      "category": "farce",
+      "like": 7,
+      "date": "date1",
+      "id": "1"
     },
     {
-      "id": 2,
-      "content": "joke2",
-      "category": "haha",
-      "like": 12,
-      "date": "date2"
+      "content": "joke2 farce",
+      "category": "farce",
+      "like": 16,
+      "date": "date2",
+      "id": "2"
     },
     {
-      "content": "haha",
-      "category": "",
+      "content": "joke3 info",
+      "category": "informatique",
+      "like": 8,
       "date": "Tue Nov 15 2022",
-      "id": "93c03b2f-27b0-40f8-8cc3-fa72a1354afc"
+      "id": "3"
+    },
+    {
+      "content": "joke4 anecdote",
+      "category": "anecdote",
+      "like": 0,
+      "date": "Tue Nov 18 2022",
+      "id": "4"
     }
   ],
+  
   "users": [
     {
       "id": 1,

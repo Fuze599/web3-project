@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useContext } from "react"
 import { Context as JokesContext } from "../../contexts/JokesContext"
+const options = require('./Categories')
 
 const AddJoke = () => {
     
@@ -19,35 +20,24 @@ const AddJoke = () => {
     const addJoke = (event) => {
       event.preventDefault()
       const joke = {
-         "content":jokeContent,
-         "category":jokeCategory,
+         "content": jokeContent,
+         "category": jokeCategory,
          "date": new Date(Date.now()).toDateString()
       }
       createJoke(joke)
       setJokeContent('')
       setJokeCategory('')
     }
-    
-    const options = [
-        {
-          label: "Second degre",    //site
-          value: "second degre",
-        },
-        {
-          label: "Autres",
-          value: "others",
-        },
-      ];
 
     return(
     <div>
       <form onSubmit={addJoke}>
         <input value = {jokeContent} onChange={handleContentChange}/>
         <select value= {jokeCategory} onChange={handleCategoryChange}>
-            {options.map((option) => (
-              <option value={option.value}>{option.label}</option>
-            ))}
-          </select>
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>{option.label}</option>
+          ))}
+        </select>
         <button type="submit">Add Joke</button>
       </form>
     </div>

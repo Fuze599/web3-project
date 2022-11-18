@@ -35,9 +35,16 @@ const ProviderWrapper = (props) => {
             .catch(error => console.warn(error))
     }
 
+    const likeJoke = (id, payload) => {
+        JokesAPI
+            .likeOne(id, payload)
+            .then(joke => joke)
+            .catch(error => console.warn(error))
+    }
+
     return (
         <>
-            <Context.Provider value={{jokes, createJoke, getJoke}}>
+            <Context.Provider value={{jokes, createJoke, getJoke, likeJoke}}>
                 { props.children }
             </Context.Provider>
         </>
