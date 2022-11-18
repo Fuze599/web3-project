@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { Context as JokesContext } from '../../contexts/JokesContext'
+import { useNavigate } from "react-router-dom"
 const options = require('./Categories')
 
 const ListJokes = () => {
@@ -31,18 +32,18 @@ const ListJokes = () => {
     return (
         <>
             <h1>All jokes</h1>
-            {filteredJokes.map((joke, index) => (
-                <div onClick={() => navigate(`/jokes/${joke.id}`)} key={joke.id} style={jokesStyle}>
-                <p>{index} - {joke.content}</p>
-                <p>{joke.like || 0} likes</p>
-                </div>
-            ))}
             <select onChange={handleFilterByCategory}>
                 {options.map((option) => (
                     <option key={option.value} value={option.value}>{option.label}</option>
                 ))}
             </select>
             <button onClick={clearFilters}>Clear</button>
+            {filteredJokes.map((joke, index) => (
+                <div onClick={() => navigate(`/jokes/${joke.id}`)} key={joke.id} style={jokesStyle}>
+                <p>{index} - {joke.content}</p>
+                <p>{joke.like || 0} likes</p>
+                </div>
+            ))}
         </>
     )
 }

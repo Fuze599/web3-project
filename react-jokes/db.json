@@ -3,7 +3,7 @@
     {
       "content": "joke1 farce",
       "category": "farce",
-      "like": 7,
+      "like": 9,
       "date": "date1",
       "id": "1"
     },
@@ -27,9 +27,14 @@
       "like": 0,
       "date": "Tue Nov 18 2022",
       "id": "4"
+    },
+    {
+      "content": "etsyrudtfiyxutj",
+      "category": "anecdote",
+      "date": "Fri Nov 18 2022",
+      "id": "d873f534-f50e-451f-91fc-9dd4e536599a"
     }
   ],
-
   "users": [
     {
       "id": 1,
