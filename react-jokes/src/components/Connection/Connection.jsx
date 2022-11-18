@@ -1,15 +1,22 @@
 import { useState } from "react"
+import { useNavigate } from 'react-router-dom'
 
 const Connection = () => {
   const [pseudo, setPseudo] = useState("")
   const [password, setPassword] = useState("")
   const users = [
     {
-        "id": 1,
-        "pseudo": "eric",
-        "password": "eric"
+      "id": 1,
+      "pseudo": "eric",
+      "password": "eric"
     }
   ]
+
+  const navigate = useNavigate()
+  if (localStorage.getItem("isConnected")) {
+    navigate("/")
+    return
+  }
 
   const handlerPseudoChange = (e) => {
     setPseudo(e.target.value)
@@ -21,8 +28,12 @@ const Connection = () => {
 
   const onSubmitButtonClick = (e) => {
     e.preventDefault()
-    if (users.find(u => u.pseudo === pseudo && u.password === password)) localStorage.setItem("isConnected", true)
-    else console.log("Incorrect password")
+    if (users.find(u => u.pseudo === pseudo && u.password === password)) {
+      localStorage.setItem("isConnected", true)
+      navigate("/")
+    } else {
+      console.log("Incorrect password")
+    }
   }
 
   return (

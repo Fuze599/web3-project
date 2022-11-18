@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from 'react-router-dom'
 
 const Registration = () => {
   const [pseudo, setPseudo] = useState("")
@@ -10,6 +11,12 @@ const Registration = () => {
       "password": "eric"
     }
   ])
+
+  const navigate = useNavigate()
+  if (localStorage.getItem("isConnected")) {
+    navigate("/")
+    return
+  }
 
   const handlerPseudoChange = (e) => {
     setPseudo(e.target.value)
@@ -28,6 +35,8 @@ const Registration = () => {
     } else {
       console.log(newUsers)
       setUsers(newUsers) 
+      localStorage.setItem("isConnected", true)
+      navigate("/")
     }
   }
 
