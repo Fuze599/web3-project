@@ -29,9 +29,9 @@ const ProviderWrapper = (props) => {
     }
 
     const getJoke = (id) => {
-        JokesAPI
+        return JokesAPI
             .getOne(id)
-            .then(joke => setJokes(joke))
+            .then(joke => joke)
             .catch(error => console.warn(error))
     }
 
