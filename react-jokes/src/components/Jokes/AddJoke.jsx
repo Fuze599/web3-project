@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useContext } from "react"
-import { Context as jokeContext } from "../../contexts/JokesContext"
+import { Context as JokesContext } from "../../contexts/JokesContext"
 
 const AddJoke = () => {
     
-    const {createJoke} = useContext(jokeContext)    //mettre le bon context 
+    const { createJoke } = useContext(JokesContext)
     const [jokeContent, setJokeContent] = useState('')
     const [jokeCategory, setJokeCategory] = useState('')
 
