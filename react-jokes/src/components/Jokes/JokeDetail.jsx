@@ -1,6 +1,4 @@
-const JokeDetail = (joke) => {
-
-    console.log(joke.content);
+const JokeDetail = ({joke}) => {
 
     return (
         <>
