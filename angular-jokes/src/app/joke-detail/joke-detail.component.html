@@ -6,6 +6,6 @@
     <div><span>Amount likes: </span>{{joke.like}}</div>
 
 
-    <button type="button" (click)="increaseLike()">Like</button>
+    <button type="button" (click)="increaseLike()" [disabled]="liked">Like</button>
     <button type="button" (click)="goBack()">go back</button>
 </div>

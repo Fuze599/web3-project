@@ -14,6 +14,8 @@ export class JokeDetailComponent implements OnInit{
 
   joke: Joke | undefined;
 
+  liked: boolean= false;
+
   constructor(
     private route: ActivatedRoute,
     private jokeService: JokeService,
@@ -33,10 +35,9 @@ export class JokeDetailComponent implements OnInit{
   increaseLike(): void {
     this.joke!.like+=1;
     this.jokeService.updateJoke(this.joke!)
-      .subscribe(joke => {
-        this.joke = joke;
-        this.goBack();
-      });
+      .subscribe();
+      //.subscribe(() => this.goBack());
+    this.liked = true;
   } 
 
   goBack(): void {
