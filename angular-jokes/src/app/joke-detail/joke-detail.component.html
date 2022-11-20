@@ -1,0 +1,11 @@
+<div *ngIf="joke">
+    <h2>Joke Details</h2>
+    <div><span>joke: </span>{{joke.content}}</div>
+    <div><span>category: </span>{{joke.category}}</div>
+    <div><span>Added date: </span>{{joke.date}}</div>
+    <div><span>Amount likes: </span>{{joke.like}}</div>
+
+
+    <button type="button" (click)="increaseLike()">Like</button>
+    <button type="button" (click)="goBack()">go back</button>
+</div>
