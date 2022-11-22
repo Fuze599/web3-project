@@ -1,18 +1,45 @@
 {
-    "jokes": [
-        {
-            "id": 1,
-            "content": "HAHAHA",
-            "category": "Hitler",
-            "like": 3,
-            "date": "date"
-        }
-    ],
-    "users": [
-        {
-            "id": 1,
-            "pseudo": "eric",
-            "password": "eric"
-        }
-    ]
+  "jokes": [
+    {
+      "content": "joke1 farce",
+      "category": "farce",
+      "like": 9,
+      "date": "date1",
+      "id": "1"
+    },
+    {
+      "content": "joke2 farce",
+      "category": "farce",
+      "like": 50,
+      "date": "date2",
+      "id": "2"
+    },
+    {
+      "content": "joke3 info",
+      "category": "informatique",
+      "like": 8,
+      "date": "Tue Nov 15 2022",
+      "id": "3"
+    },
+    {
+      "content": "joke4 anecdote",
+      "category": "anecdote",
+      "like": 0,
+      "date": "Tue Nov 18 2022",
+      "id": "4"
+    },
+    {
+      "content": "etsyrudtfiyxutj",
+      "category": "anecdote",
+      "date": "Fri Nov 18 2022",
+      "id": "d873f534-f50e-451f-91fc-9dd4e536599a"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "pseudo": "eric",
+      "password": "eric"
+    }
+  ]
 }
