@@ -1,10 +1,9 @@
 import { useContext, useState, useEffect } from "react"
 import { Context as JokesContext } from '../../contexts/JokesContext'
 import { useNavigate } from "react-router-dom"
-const options = require('./Categories')
 
 const ListJokes = () => {
-  const { jokes } = useContext(JokesContext)
+  const { jokes, categories } = useContext(JokesContext)
   const [filteredJokes, setFilteredJokes] = useState([])
   const navigate = useNavigate()
 
@@ -32,7 +31,7 @@ const ListJokes = () => {
     <>
       <h1>All jokes</h1>
       <select onChange={handleFilterByCategory}>
-        {options.map((option) => (
+        {categories.map((option) => (
           <option key={option.value} value={option.value}>{option.label}</option>
         ))}
       </select>

@@ -1,8 +1,8 @@
 import About from "components/About/About"
 import Home from "components/Home/Home"
-import AddJoke from "components/Jokes/AddJoke"
-import ListJokes from "components/Jokes/ListJokes"
-import JokeDetail from "components/Jokes/JokeDetail"
+import AddJoke from "components/AddJoke/AddJoke"
+import ListJokes from "components/ListJokes/ListJokes"
+import JokeDetail from "components/JokeDetails/JokeDetail"
 import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom"
 import Connection from "components/Connection/Connection"
 import { Context } from '../../contexts/JokesContext'
@@ -44,7 +44,7 @@ const App = () => {
           <div style={navbarStyle}>
             <Link style={navbarElementStyle} to="/">Home</Link>
             <Link style={navbarElementStyle} to="/jokes">Jokes</Link>
-            <Link style={navbarElementStyle} to="/create">Create new jokes</Link>
+            <Link style={navbarElementStyle} to="/create">Create new joke</Link>
             <Link style={navbarElementStyle} to="/about">About</Link>
             <span style={navbarElementStyle} onClick={disconnect}>
               Disconnect

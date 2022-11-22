@@ -1,24 +1,23 @@
 import { useState } from "react";
 import { useContext } from "react"
-import { Context as JokesContext } from "../../contexts/JokesContext"
-const options = require('./Categories')
+import { Context as JokesContext } from 'contexts/JokesContext'
 
 const AddJoke = () => {
 
-  const { createJoke } = useContext(JokesContext)
+  const { createJoke, categories } = useContext(JokesContext)
   const [jokeContent, setJokeContent] = useState('')
   const [jokeCategory, setJokeCategory] = useState('')
 
-  const handleContentChange = (event) => {
-    setJokeContent(event.target.value)
+  const handleContentChange = (e) => {
+    setJokeContent(e.target.value)
   }
 
-  const handleCategoryChange = (event) => {
-    setJokeCategory(event.target.value)
+  const handleCategoryChange = (e) => {
+    setJokeCategory(e.target.value)
   }
 
-  const addJoke = (event) => {
-    event.preventDefault()
+  const addJoke = (e) => {
+    e.preventDefault()
     const joke = {
       "content": jokeContent,
       "category": jokeCategory,
@@ -27,6 +26,7 @@ const AddJoke = () => {
     createJoke(joke)
     setJokeContent('')
     setJokeCategory('')
+    alert('New joke added')
   }
 
   const formStyle = {
@@ -41,12 +41,12 @@ const AddJoke = () => {
 
   return (
     <div>
-      <h1>Create new joke</h1>
+      <h1>Create a new joke</h1>
       <form style={formStyle} onSubmit={addJoke}>
         <textarea style={inputStyle} rows="10" cols="70" value={jokeContent} onChange={handleContentChange} />
         <br />
         <select style={inputStyle} value={jokeCategory} onChange={handleCategoryChange}>
-          {options.map((option) => (
+          {categories.map((option) => (
             <option value={option.value}>{option.label}</option>
           ))}
         </select>
