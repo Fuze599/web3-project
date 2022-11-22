@@ -3,7 +3,6 @@ import { useContext } from "react"
 import { Context as JokesContext } from 'contexts/JokesContext'
 
 const AddJoke = () => {
-
   const { createJoke, categories } = useContext(JokesContext)
   const [jokeContent, setJokeContent] = useState('')
   const [jokeCategory, setJokeCategory] = useState('')
@@ -46,8 +45,8 @@ const AddJoke = () => {
         <textarea style={inputStyle} rows="10" cols="70" value={jokeContent} onChange={handleContentChange} />
         <br />
         <select style={inputStyle} value={jokeCategory} onChange={handleCategoryChange}>
-          {categories.map((option) => (
-            <option value={option.value}>{option.label}</option>
+          {categories.map((category) => (
+            <option key={category.value} value={category.value}>{category.label}</option>
           ))}
         </select>
         <br />

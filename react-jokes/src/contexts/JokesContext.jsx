@@ -17,7 +17,6 @@ const ProviderWrapper = (props) => {
 			.catch(error => console.warn(error))
 
 		if (localStorage.getItem("isConnected")) {
-			console.log(localStorage.getItem("isConnected"));
 			setIsConnected(true)
 		}
 	}
