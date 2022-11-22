@@ -10,11 +10,11 @@ const create = (jokePayload) => axios.post(baseUrl, jokePayload).then(response =
 
 const likeOne = (id, payload) => axios.put(`${baseUrl}/${id}`, payload).then(response => response.data)
 
-const PersonsAPI = {
+const JokesAPI = {
   getAll,
   getOne,
   create,
   likeOne,
 }
 
-export default PersonsAPI
+export default JokesAPI
