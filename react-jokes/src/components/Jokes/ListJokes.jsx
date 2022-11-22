@@ -17,33 +17,33 @@ const ListJokes = () => {
   }
 
   useEffect(() => {
-      setFilteredJokes(jokes)
+    setFilteredJokes(jokes)
   }, [jokes])
 
   const handleFilterByCategory = (e) => {
-      setFilteredJokes(jokes.filter(joke => joke.category === e.target.value))
+    setFilteredJokes(jokes.filter(joke => joke.category === e.target.value))
   }
 
   const clearFilters = () => {
-      setFilteredJokes(jokes)
+    setFilteredJokes(jokes)
   }
 
   return (
-      <>
-          <h1>All jokes</h1>
-          <select onChange={handleFilterByCategory}>
-              {options.map((option) => (
-                  <option key={option.value} value={option.value}>{option.label}</option>
-              ))}
-          </select>
-          <button onClick={clearFilters}>Clear</button>
-          {filteredJokes.map((joke, index) => (
-              <div onClick={() => navigate(`/jokes/${joke.id}`)} key={joke.id} style={jokesStyle}>
-              <p>{index + 1} - {joke.content}</p>
-              <p>{joke.like || 0} likes</p>
-              </div>
-          ))}
-      </>
+    <>
+      <h1>All jokes</h1>
+      <select onChange={handleFilterByCategory}>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
+      </select>
+      <button onClick={clearFilters}>Clear</button>
+      {filteredJokes.map((joke, index) => (
+        <div onClick={() => navigate(`/jokes/${joke.id}`)} key={joke.id} style={jokesStyle}>
+          <p>{index + 1} - {joke.content}</p>
+          <p>{joke.like || 0} likes</p>
+        </div>
+      ))}
+    </>
   )
 }
 

@@ -3,14 +3,10 @@ import { useNavigate } from "react-router-dom"
 import { Context } from '../../contexts/JokesContext'
 
 const Connection = () => {
+  const navigate = useNavigate()
   const [pseudo, setPseudo] = useState("")
   const [password, setPassword] = useState("")
-
-  const navigate = useNavigate()
-  if (localStorage.getItem("isConnected")) {
-    navigate("/")
-    return
-  }
+  const { getUser, setIsConnected } = useContext(Context)
 
   const handlerPseudoChange = (e) => {
     setPseudo(e.target.value)
@@ -20,16 +16,20 @@ const Connection = () => {
     setPassword(e.target.value)
   }
 
+  const connectUser = () => {
+    localStorage.setItem("isConnected", true)
+    setIsConnected(true)
+    navigate("/")
+  }
+
   const onSubmitButtonClick = async (e) => {
     e.preventDefault()
     const user = await getUser(pseudo)
     if (user && user.length === 1 && user[0].password === password) {
-      localStorage.setItem("isConnected", true)
-      setIsConnected(true)
-      navigate("/")
+      connectUser()
     } else {
       console.log("Incorrect password")
-    } 
+    }
   }
 
   return (

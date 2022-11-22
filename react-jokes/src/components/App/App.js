@@ -1,5 +1,4 @@
 import About from "components/About/About"
-import Connection from "components/Connection/Connection"
 import Home from "components/Home/Home"
 import AddJoke from "components/Jokes/AddJoke"
 import ListJokes from "components/Jokes/ListJokes"
@@ -29,30 +28,33 @@ const App = () => {
     backgroundColor: "DodgerBlue",
     padding: "10px",
     marginRight: "10px",
+    cursor: "pointer"
+  }
+
+  const disconnect = () => {
+    setIsConnected(false)
+    localStorage.removeItem("isConnected")
+    navigate("/login")
   }
 
   return (
     <div style={generalStyle}>
       {
         isConnected ?
-        <div style={navbarStyle}>
-          <Link style={navbarElementStyle} to="/">Home</Link>
-          <Link style={navbarElementStyle} to="/jokes">Jokes</Link>
-          <Link style={navbarElementStyle} to="/create">Create new jokes</Link>
-          <Link style={navbarElementStyle} to="/about">About</Link>
-          <span style={navbarElementStyle} onClick={() => {
-            setIsConnected(false) 
-            localStorage.removeItem("isConnected")
-            navigate("/login")
-          }}>
-            Disconnect
-          </span>
-        </div>
-        :
-        <></>
+          <div style={navbarStyle}>
+            <Link style={navbarElementStyle} to="/">Home</Link>
+            <Link style={navbarElementStyle} to="/jokes">Jokes</Link>
+            <Link style={navbarElementStyle} to="/create">Create new jokes</Link>
+            <Link style={navbarElementStyle} to="/about">About</Link>
+            <span style={navbarElementStyle} onClick={disconnect}>
+              Disconnect
+            </span>
+          </div>
+          :
+          <></>
       }
-      
-      
+
+
       <Routes>
         <Route path='/' element={isConnected ? <Home /> : <Navigate replace to="/login" />} />
         <Route path='/login' element={!isConnected ? <Connection /> : <Navigate replace to="/" />} />
@@ -60,10 +62,6 @@ const App = () => {
         <Route path='/create' element={isConnected ? <AddJoke /> : <Navigate replace to="/login" />} />
         <Route path='/about' element={isConnected ? <About /> : <Navigate replace to="/login" />} />
         <Route path='/jokes/:id' element={isConnected ? <JokeDetail /> : <Navigate replace to="/login" />} />
-        {/* <span onClick={() => {
-          setIsConnected(false) 
-          localStorage.removeItem("isConnected")
-        }}><Route path='/disconnect' /></span> */}
       </Routes>
     </div>
   )
