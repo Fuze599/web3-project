@@ -18,14 +18,14 @@ const App = () => {
 
   const navbarStyle = {
     color: "white",
-    backgroundColor: "DodgerBlue",
+    backgroundColor: "#4299e1",
     padding: "10px",
   }
 
   const navbarElementStyle = {
     textDecoration: 'none',
     color: "white",
-    backgroundColor: "DodgerBlue",
+    backgroundColor: "#4299e1",
     padding: "10px",
     marginRight: "10px",
     cursor: "pointer"

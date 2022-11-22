@@ -32,16 +32,42 @@ const Connection = () => {
     }
   }
 
+  const loginTitleStyle = {
+    backgroundColor: "#4299e1",
+    padding: "10px",
+    color: "white"
+  }
+
+  const formStyle = {
+    borderRadius: "5px",
+    backgroundColor: "#f2f2f2",
+    padding: "20px",
+    margin: "0 20%"
+  }
+
+  const inputStyle = {
+    width: "100%",
+    padding: "12px 20px",
+    margin: "8px 0",
+    display: "inline-block",
+    border: "1px solid #ccc",
+    borderRadius: "4px",
+    boxSizing: "border-box"
+  }
+
   return (
     <div>
-      <h1>Login</h1>
-      <form>
+      <h1 style={loginTitleStyle}>Login</h1>
+      <form style={formStyle}>
         <label htmlFor="pseudo">Pseudo :</label>
-        <input onChange={handlerPseudoChange} type="text" id="pseudo" name="pseudo" required></input>
-        <br></br>
+        <br/>
+        <input style={inputStyle} onChange={handlerPseudoChange} type="text" id="pseudo" name="pseudo" required></input>
+        <br/>
         <label htmlFor="password">Password :</label>
-        <input onChange={handlerPasswordChange} type="text" id="password" name="password" required></input>
-        <input type="submit" value="Se connecter" onClick={onSubmitButtonClick}></input>
+        <br/>
+        <input style={inputStyle} onChange={handlerPasswordChange} type="password" id="password" name="password" required></input>
+        <br/>
+        <input style={inputStyle} type="submit" value="Se connecter" onClick={onSubmitButtonClick}></input>
       </form>
     </div>
   )

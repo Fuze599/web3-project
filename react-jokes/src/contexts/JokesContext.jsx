@@ -26,7 +26,8 @@ const ProviderWrapper = (props) => {
 	const createJoke = (payload) => {
 		const joke = {
 			...payload,
-			id: uuidv4()
+			id: uuidv4(),
+			like: 0
 		}
 		JokesAPI
 			.create(joke)
@@ -50,6 +51,13 @@ const ProviderWrapper = (props) => {
 	}
 
 	const likeJoke = (id, payload) => {
+		const newJokes = Array.from(jokes)
+		const joke = newJokes.find(j => j.id === id)
+
+		const index = newJokes.indexOf(joke)
+		newJokes[index].like++
+		setJokes(newJokes)
+
 		JokesAPI
 			.likeOne(id, payload)
 			.then(joke => joke)
