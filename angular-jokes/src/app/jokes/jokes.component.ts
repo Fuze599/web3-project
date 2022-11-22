@@ -12,7 +12,6 @@ export class JokesComponent implements OnInit{
   jokes: Joke[] = [];
   filteredJokes: Joke[] = [];
   categories: string[] = [];
-  category: string = "";
 
   constructor(private jokeService: JokeService) { }
 
