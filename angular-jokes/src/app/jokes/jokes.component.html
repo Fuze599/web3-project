@@ -1,8 +1,6 @@
 <h1>All jokes</h1>
 <div class="form-group">
-    <select ngModel (ngModelChange)="filter($event)" class="form-control" id="joke-category"
-        required
-        #category>
+    <select ngModel (ngModelChange)="filter($event)" class="form-control" id="joke-category">
             <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
     </select>
     <button type="submit" (click)="resetFilteredJokes();"></button>
