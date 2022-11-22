@@ -1,15 +1,12 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { useNavigate } from "react-router-dom"
+import { Context } from '../../contexts/JokesContext'
 
 const Connection = () => {
   const [pseudo, setPseudo] = useState("")
   const [password, setPassword] = useState("")
-  const users = [
-    {
-        "id": 1,
-        "pseudo": "eric",
-        "password": "eric"
-    }
-  ]
+  const { getUser, setIsConnected } = useContext(Context)
+  const navigate = useNavigate();
 
   const handlerPseudoChange = (e) => {
     setPseudo(e.target.value)
@@ -19,15 +16,21 @@ const Connection = () => {
     setPassword(e.target.value)
   }
 
-  const onSubmitButtonClick = (e) => {
+  const onSubmitButtonClick = async (e) => {
     e.preventDefault()
-    if (users.find(u => u.pseudo === pseudo && u.password === password)) localStorage.setItem("isConnected", true);
-    else console.log("Incorrect password")
+    const user = await getUser(pseudo)
+    if (user && user.length === 1 && user[0].password === password) {
+      localStorage.setItem("isConnected", true)
+      setIsConnected(true)
+      navigate("/")
+    } else {
+      console.log("Incorrect password")
+    } 
   }
 
   return (
     <div>
-      <h1>Shark squad</h1>
+      <h1>Login</h1>
       <form>
         <label for="pseudo">Pseudo :</label>
         <input onChange={handlerPseudoChange} type="text" id="pseudo" name="pseudo" required></input>
