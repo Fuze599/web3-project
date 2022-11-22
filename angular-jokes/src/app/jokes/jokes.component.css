@@ -1,0 +1,11 @@
+* {
+  font-family: Verdana
+}
+
+div {
+  margin: 20px;
+  padding: 0px 10px 0px 10px;
+  border: 2px solid DodgerBlue;
+  cursor: pointer;
+  border-radius: 4px;
+}

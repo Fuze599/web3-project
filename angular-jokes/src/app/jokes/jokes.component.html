@@ -1,8 +1,5 @@
 <h1>All jokes</h1>
-<div>
-    <a *ngFor="let joke of jokes"
-        routerLink="/jokes/{{joke.id}}">
-        {{joke.id}} - {{joke.content}} <br>
-        {{joke.like}} likes <br> <br>
-    </a>
+<div *ngFor="let joke of jokes" routerLink="/jokes/{{joke.id}}">
+    <p>{{joke.id}} - {{joke.content}}</p>
+    <p>{{joke.like}} likes</p>
 </div>
