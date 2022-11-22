@@ -10,11 +10,16 @@ import { JokeService } from '../joke.service';
 export class JokesComponent implements OnInit{
 
   jokes: Joke[] = [];
+  filteredJokes: Joke[] = [];
+  categories: string[] = [];
+  category: string = "";
 
   constructor(private jokeService: JokeService) { }
 
   ngOnInit(): void {
     this.getJokes();
+    this.getJokesCategory();
+    this.resetFilteredJokes();
   }
 
   getJokes(): void {
@@ -22,4 +27,16 @@ export class JokesComponent implements OnInit{
       .subscribe(jokes => this.jokes = jokes);
   }
 
+  getJokesCategory(): void {
+    this.jokeService.getJokesCategory()
+      .subscribe(cat => this.categories = cat);      
+  }
+
+  resetFilteredJokes(): void {
+    this.filteredJokes = this.jokes;
+  }
+
+  filter(cat:string): void {
+    this.filteredJokes = this.jokes.filter(j => j.category === cat);
+  }
 }

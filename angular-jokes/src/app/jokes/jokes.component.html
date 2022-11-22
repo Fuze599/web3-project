@@ -1,5 +1,13 @@
 <h1>All jokes</h1>
-<div *ngFor="let joke of jokes" routerLink="/jokes/{{joke.id}}">
+<div class="form-group">
+    <select class="form-control" id="joke-category"
+        required
+        #category>
+            <option *ngFor="let cat of categories" [value]="cat" (click)="filter(category.value)">{{cat}}</option>
+    </select>
+    <button type="submit" (click)="resetFilteredJokes();"></button>
+</div>
+<div *ngFor="let joke of filteredJokes" routerLink="/jokes/{{joke.id}}">
     <p>{{joke.id}} - {{joke.content}}</p>
     <p>{{joke.like}} likes</p>
 </div>

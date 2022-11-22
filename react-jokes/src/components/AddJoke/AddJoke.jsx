@@ -47,7 +47,7 @@ const AddJoke = () => {
         <br />
         <select style={inputStyle} value={jokeCategory} onChange={handleCategoryChange}>
           {categories.map((option) => (
-            <option value={option.value}>{option.label}</option>
+            <option key={option.label} value={option.value}>{option.label}</option>
           ))}
         </select>
         <br />
