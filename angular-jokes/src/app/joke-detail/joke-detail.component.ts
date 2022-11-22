@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Joke } from '../joke';
 import { JokeService } from '../joke.service';
 
+import { LOCALE_ID } from '@angular/core';
+import { formatDate } from '@angular/common';
 @Component({
   selector: 'app-joke-detail',
   templateUrl: './joke-detail.component.html',
@@ -19,7 +21,8 @@ export class JokeDetailComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
     private jokeService: JokeService,
-    private location: Location
+    private location: Location,
+    @Inject(LOCALE_ID) public locale: string
   ) {}
 
   ngOnInit(): void {
@@ -28,8 +31,8 @@ export class JokeDetailComponent implements OnInit{
 
   getJoke(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
-    this.jokeService.getJoke(id)
-      .subscribe(joke => this.joke = joke);
+    this.jokeService.getJoke(id).subscribe(joke => this.joke = joke);
+      console.log("NeDevraitPasEtreUndefined:", this.joke);
   }
 
   increaseLike(): void {

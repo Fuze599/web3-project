@@ -26,12 +26,14 @@ export class NewJokeComponent implements OnInit {
   add(content: string, category: string): void {
     if (!content.trim()) {       
       return; }
-    this.jokeService.addJoke({ content: content, category: category, like: 0, date: new Date(Date.now()).toDateString() } as Joke)
+    this.jokeService.addJoke({ content: content, category: category, like: 0, date: new Date(Date.now()).toISOString() } as Joke)
       .subscribe();
   }
 
-  onSubmit(): void {
+  submitted = false;
 
-  }
+  onSubmit() { this.submitted = true; console.log("passé");}
+
+  jokeTextEntered: string = "";
 
 }

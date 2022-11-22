@@ -2,7 +2,7 @@
     <h2>Joke Details</h2>
     <div><span>joke: </span>{{joke.content}}</div>
     <div><span>category: </span>{{joke.category}}</div>
-    <div><span>Added date: </span>{{joke.date}}</div>
+    <div><span>Added date: </span>{{joke.date | date:'medium':'UTC+1' }}</div>
     <div><span>Amount likes: </span>{{joke.like}}</div>
 
 
