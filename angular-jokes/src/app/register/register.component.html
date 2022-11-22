@@ -1,0 +1,43 @@
+<div class="form-group">
+    <h1>Register</h1>
+        <form
+        *ngIf="!isSuccessful"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate 
+        >
+        <label for="username">Username:</label><br>
+        <input 
+        type="text"
+        class="form-control"
+        name="username"
+        [(ngModel)]="form.username"
+        required
+        minlength="3"
+        maxlength="20"
+        #username="ngModel"
+        ><br>
+        <label for="password">Password:</label><br>
+        <input 
+        type="password"
+        class="form-control"
+        name="password"
+        [(ngModel)]="form.password"
+        required
+        minlength="6"
+        #password="ngModel"
+        ><br>
+        <label for="confirm_password">Confirm Password:</label><br>
+        <input 
+        type="password"
+        class="form-control"
+        name="confirm_password"
+        [(ngModel)]="form.confirm_password"
+        required
+        minlength="6"
+        #confirm_password="ngModel"
+        ><br>
+        <button type="button" class="btn btn-default" (click)="onSubmit()">Create</button>
+    </form>
+</div>

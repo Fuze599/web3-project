@@ -14,6 +14,11 @@ import { JokesComponent } from './jokes/jokes.component';
 import { NewJokeComponent } from './new-joke/new-joke.component';
 import { AboutComponent } from './about/about.component';
 import { JokeDetailComponent } from './joke-detail/joke-detail.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
+import { authInterceptorProviders } from './helper/auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +27,9 @@ import { JokeDetailComponent } from './joke-detail/joke-detail.component';
     JokesComponent,
     NewJokeComponent,
     AboutComponent,
-    JokeDetailComponent
+    JokeDetailComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,7 @@ import { JokeDetailComponent } from './joke-detail/joke-detail.component';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
