@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useContext } from "react"
 import { Context as JokesContext } from "../../contexts/JokesContext"
+const options = require('./Categories')
 
 const AddJoke = () => {
     
@@ -19,25 +20,14 @@ const AddJoke = () => {
     const addJoke = (event) => {
       event.preventDefault()
       const joke = {
-         "content":jokeContent,
-         "category":jokeCategory,
+         "content": jokeContent,
+         "category": jokeCategory,
          "date": new Date(Date.now()).toDateString()
       }
       createJoke(joke)
       setJokeContent('')
       setJokeCategory('')
     }
-    
-    const options = [
-        {
-          label: "Second degre",    //site
-          value: "second degre",
-        },
-        {
-          label: "Autres",
-          value: "others",
-        },
-      ];
 
     const formStyle = {
       textAlign: "center",

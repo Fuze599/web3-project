@@ -1,13 +1,12 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Context as JokesContext } from '../../contexts/JokesContext'
 import { useNavigate } from "react-router-dom"
+const options = require('./Categories')
+
 const ListJokes = () => {
 
   const { jokes } = useContext(JokesContext)
   const navigate = useNavigate()
-
-  const [search, setSearch] = useState('')
-  const [searchCategory, setSearchCategory] = useState('')
 
   const jokesStyle = {
     margin: "20px",
@@ -17,7 +16,19 @@ const ListJokes = () => {
     "border-radius": "4px"
   }
 
-  const options = [
+    useEffect(() => {
+        setFilteredJokes(jokes)
+    }, [jokes])
+
+    const handleFilterByCategory = (e) => {
+        setFilteredJokes(jokes.filter(joke => joke.category === e.target.value))
+    }
+
+    const clearFilters = () => {
+        setFilteredJokes(jokes)
+    }
+
+    const options = [
     {
       label: "Second degre",    //site
       value: "second degre",
@@ -29,23 +40,29 @@ const ListJokes = () => {
   ];
 
   return (
-    <>
-      <h1>All jokes</h1>
-      <input type="text"/>
+        <>
+            <h1>All jokes</h1>
+            <select onChange={handleFilterByCategory}>
+                {options.map((option) => (
+                    <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
+            </select>
+            <button onClick={clearFilters}>Clear</button>
+            <input type="text"/>
       <br/>
       <select value= {searchCategory}>
         {options.map((option) => (
           <option value={option.value}>{option.label}</option>
         ))}
       </select>
-      {jokes.map((joke, index) => (
-        <div onClick={() => navigate(`/jokes/${joke.id}`)} key={joke.id} style={jokesStyle}>
-          <p>{index} - {joke.content}</p>
-          <p>{joke.like || 0} likes</p>
-        </div>
-      ))}
-    </>
-  )
+      {filteredJokes.map((joke, index) => (
+                <div onClick={() => navigate(`/jokes/${joke.id}`)} key={joke.id} style={jokesStyle}>
+                <p>{index} - {joke.content}</p>
+                <p>{joke.like || 0} likes</p>
+                </div>
+            ))}
+        </>
+    )
 }
 
 export default ListJokes
