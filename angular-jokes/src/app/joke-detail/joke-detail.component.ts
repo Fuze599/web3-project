@@ -6,7 +6,7 @@ import { Joke } from '../joke';
 import { JokeService } from '../joke.service';
 
 import { LOCALE_ID } from '@angular/core';
-import { formatDate } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-joke-detail',
   templateUrl: './joke-detail.component.html',
@@ -19,6 +19,7 @@ export class JokeDetailComponent implements OnInit{
   liked: boolean= false;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private jokeService: JokeService,
     private location: Location,
@@ -26,8 +27,16 @@ export class JokeDetailComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
+    const isConnected = localStorage.getItem("isConnected");
+    
+    if (isConnected === null) {
+      this.router.navigate(["/login"]);
+      return;
+    }
+
     this.getJoke();
   }
+
 
   getJoke(): void {
     const id = this.route.snapshot.paramMap.get('id')!;

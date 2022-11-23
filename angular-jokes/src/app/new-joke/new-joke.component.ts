@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Joke } from '../joke';
 import { JokeService } from '../joke.service';
@@ -12,9 +13,18 @@ export class NewJokeComponent implements OnInit {
 
   jokes: string[] = [];
 
-  constructor(private jokeService: JokeService) { }
+  constructor(
+    private jokeService: JokeService,
+    private router: Router) { }
 
   ngOnInit(): void {
+    const isConnected = localStorage.getItem("isConnected");
+    
+    if (isConnected === null) {
+      this.router.navigate(["/login"]);
+      return;
+    }
+
     this.getJokesCategory();
   }
 

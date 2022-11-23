@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Joke } from '../joke';
 import { JokeService } from '../joke.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jokes',
@@ -13,9 +14,19 @@ export class JokesComponent implements OnInit{
   filteredJokes: Joke[] = [];
   categories: string[] = [];
 
-  constructor(private jokeService: JokeService) { }
+  constructor(
+    private jokeService: JokeService,
+    private router: Router) { }
 
   ngOnInit(): void {
+
+    const isConnected = localStorage.getItem("isConnected");
+    
+    if (isConnected === null) {
+      this.router.navigate(["/login"]);
+      return;
+    }
+
     this.getJokes();
     this.getJokesCategory();
     this.resetFilteredJokes();
