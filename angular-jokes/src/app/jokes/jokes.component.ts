@@ -23,7 +23,10 @@ export class JokesComponent implements OnInit{
 
   getJokes(): void {
     this.jokeService.getJokes()
-      .subscribe(jokes => this.jokes = jokes);
+      .subscribe(jokes => {
+        this.jokes = jokes;
+        this.filteredJokes = jokes;
+      });
   }
 
   getJokesCategory(): void {

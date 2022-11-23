@@ -30,9 +30,8 @@ export class JokeDetailComponent implements OnInit{
   }
 
   getJoke(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
+    const id = this.route.snapshot.paramMap.get('id')!;
     this.jokeService.getJoke(id).subscribe(joke => this.joke = joke);
-      console.log("NeDevraitPasEtreUndefined:", this.joke);
   }
 
   increaseLike(): void {

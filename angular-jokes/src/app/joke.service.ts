@@ -11,8 +11,8 @@ import { Joke } from './joke';
 })
 export class JokeService {
 
-  private jokesUrl = 'api/jokes';  // URL to web api
-  private jokesCategoriesUrl = 'api/categories'; // URL to categories
+  private jokesUrl = 'http://localhost:3002/jokes';  // URL to web api
+  private jokesCategoriesUrl = 'http://localhost:3002/categories'; // URL to categories
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -25,11 +25,12 @@ export class JokeService {
 
   /** GET jokes from the server */
   getJokes(): Observable<Joke[]> {
-    return this.http.get<Joke[]>(this.jokesUrl)
-      .pipe(
-        tap(_ => console.log('fetched jokes')),
-        catchError(this.handleError<Joke[]>('getJokes', []))
-      );
+    return this.http
+    .get<Joke[]>(this.jokesUrl)
+    .pipe(
+      tap(_ => console.log('fetched jokes')),
+      catchError(this.handleError<Joke[]>('getJokesCategory', []))
+     );
   }
 
   /** GET categorie jokes from the server */
@@ -42,7 +43,7 @@ export class JokeService {
   }
 
   /** GET joke by id. Will 404 if id not found */
-  getJoke(id: number): Observable<Joke> {
+  getJoke(id: string): Observable<Joke> {
     const url = `${this.jokesUrl}/${id}`;
     return this.http.get<Joke>(url).pipe(
       tap(_ => console.log(`fetched joke id=${id}`)),
@@ -62,8 +63,9 @@ export class JokeService {
   }
 
   /** PUT: update a joke to the server */
-  updateJoke(joke: Joke): Observable<Joke> {    
-    return this.http.put<Joke>(this.jokesUrl, joke, this.httpOptions).pipe(
+  updateJoke(joke: Joke): Observable<Joke> {
+    const url = `${this.jokesUrl}/${joke.id}`;
+    return this.http.put<Joke>(url, joke, this.httpOptions).pipe(
         catchError(this.handleError<Joke>('updateJoke'))
     );
   }

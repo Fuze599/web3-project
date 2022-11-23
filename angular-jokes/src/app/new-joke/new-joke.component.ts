@@ -20,7 +20,8 @@ export class NewJokeComponent implements OnInit {
 
   getJokesCategory(): void {
     this.jokeService.getJokesCategory()
-      .subscribe(cat => this.jokes = cat);      
+      .subscribe(cat => {console.log(cat);
+        this.jokes = cat} );      
   }
 
   add(content: string, category: string): void {
