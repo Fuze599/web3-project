@@ -24,5 +24,6 @@ npm run server
 To launch angular-jokes : 
 
 ```
-ng serve --open
+npm run server
+npm start
 ```
