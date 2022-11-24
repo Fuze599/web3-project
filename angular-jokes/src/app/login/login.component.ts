@@ -29,29 +29,22 @@ export class LoginComponent implements OnInit {
 
   connect(pseudo: string, password: string): void {
     this.userService.getUser(pseudo!)
-      .subscribe(user => {
-               
-        console.log(user);
+      .subscribe(user => {        
         
-        console.log(password);
-        
-        
-        if (user.toString().length === 0) {
+        if (user.length === 0) {
           alert("Incorrect pseudo or passsword !");
           return;
         }
 
-        console.log("z",user.password,"z",password,"z");
+        if (user[0].password !== password) {
+          alert("Incorrect pseudo or passsword !");
+          return;
+        }
         
-        console.log(user.password === password);
-        // TODO VERIFICATION DE MDP
-        
-
         localStorage.setItem("isConnected", "true");
     
         window.location.reload();
         this.router.navigate(['/home']);
-        console.log(user);
         
       });
   }

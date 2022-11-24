@@ -19,11 +19,11 @@ export class UserService {
 
 
   /** GET user by username. Will 404 if id not found */
-  getUser(pseudo: string): Observable<User> {
+  getUser(pseudo: string): Observable<User[]> {
     const url = `${this.usersUrl}?pseudo=${pseudo}`;
-    return this.http.get<User>(url).pipe(
+    return this.http.get<User[]>(url).pipe(
       tap(_ => console.log(`fetched user pseudo=${pseudo}`)),
-      catchError(this.handleError<User>(`getUser pseudo=${pseudo}`))
+      catchError(this.handleError<User[]>(`getUser pseudo=${pseudo}`))
     );
   }
 
