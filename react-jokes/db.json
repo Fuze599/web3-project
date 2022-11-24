@@ -22,11 +22,19 @@
       "like": 9
     },
     {
+<<<<<<< HEAD
       "content": "ugfryxhcvgoçr§",
       "category": "chuck Norris facts",
       "date": "Wed Nov 23 2022",
       "id": "2d6522ee-a03a-4ebb-9108-69a8b3357a8d",
       "like": 1
+=======
+      "content": "test",
+      "category": "anecdote",
+      "date": "Wed Nov 23 2022",
+      "id": "1010665a-7173-48cd-adb3-2e8031683988",
+      "like": 0
+>>>>>>> 26799b307a01429a9035f22f9c30b676fd5d0bfc
     }
   ],
   "users": [

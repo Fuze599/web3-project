@@ -1,0 +1,14 @@
+<div>
+    <h1 >Login</h1>
+    <form >
+      <label For="pseudo">Pseudo :</label>
+      <br/>
+      <input type="text" id="pseudo" name="pseudo" required #pseudo/>
+      <br/>
+      <label for="password">Password :</label>
+      <br/>
+      <input type="password" id="password" name="password" required #password/>
+      <br/>
+      <input type="submit" value="Login" (click)="connect(pseudo.value, password.value);"/>
+    </form>
+  </div>

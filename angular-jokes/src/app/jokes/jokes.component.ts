@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { Joke } from '../joke';
 import { JokeService } from '../joke.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jokes',
@@ -15,16 +15,28 @@ export class JokesComponent implements OnInit{
   filteredJokes: Joke[] = [];
   categories: string[] = [];
 
-  constructor(private jokeService: JokeService, private cdr: ChangeDetectorRef) { }
+  constructor(private jokeService: JokeService, private cdr: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit(): void {
+
+    const isConnected = localStorage.getItem("isConnected");
+    
+    if (isConnected === null) {
+      this.router.navigate(["/login"]);
+      return;
+    }
+
+    this.getJokes();
     this.getJokesCategory();
     this.getJokes();
   }
 
   getJokes(): void {
     this.jokeService.getJokes()
-      .subscribe(jokes => this.jokes = jokes);
+      .subscribe(jokes => {
+        this.jokes = jokes;
+        this.filteredJokes = jokes;
+      });
   }
 
   getJokesCategory(): void {
