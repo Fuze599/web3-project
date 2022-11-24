@@ -39,8 +39,11 @@ export class NewJokeComponent implements OnInit {
       return; }
     this.jokeService.addJoke({ content: content, category: category, like: 0, date: new Date(Date.now()).toISOString() } as Joke)
       .subscribe();
-    alert("new joke added");
   }
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; console.log("passé");}
 
   jokeTextEntered: string = "";
 

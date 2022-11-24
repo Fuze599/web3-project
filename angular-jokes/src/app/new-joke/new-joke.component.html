@@ -1,6 +1,6 @@
 <h1>Create a new joke</h1>
 
-<form #newJokeForm="ngForm">
+<form (ngSubmit)="onSubmit()" #newJokeForm="ngForm">
   
   <div class="form-group">
     <label for="new-joke-content">Joke content: </label>
