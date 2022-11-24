@@ -7,7 +7,7 @@ import { NewJokeComponent } from './new-joke/new-joke.component';
 import { AboutComponent } from './about/about.component';
 import { JokeDetailComponent } from './joke-detail/joke-detail.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'jokes/:id', component: JokeDetailComponent },
   { path: 'create', component: NewJokeComponent },
   { path: 'about', component: AboutComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: 'login', component: LoginComponent}
+
 ];
 
 @NgModule({

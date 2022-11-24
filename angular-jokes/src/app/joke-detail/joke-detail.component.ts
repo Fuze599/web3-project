@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Joke } from '../joke';
-import { JokeService } from '../joke.service';
+import { Joke } from '../interface/joke';
+import { JokeService } from '../services/joke.service';
 
 @Component({
   selector: 'app-joke-detail',

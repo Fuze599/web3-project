@@ -1,7 +1,8 @@
 import { Component, OnInit} from '@angular/core';
+import * as e from 'express';
 
-import { Joke } from '../joke';
-import { JokeService } from '../joke.service';
+import { Joke } from '../interface/joke';
+import { JokeService } from '../services/joke.service';
 
 @Component({
   selector: 'app-new-joke',
@@ -10,7 +11,7 @@ import { JokeService } from '../joke.service';
 })
 export class NewJokeComponent implements OnInit {
 
-  jokes: string[] = [];
+  categories : string[] = [];
 
   constructor(private jokeService: JokeService) { }
 
@@ -19,8 +20,8 @@ export class NewJokeComponent implements OnInit {
   }
 
   getJokesCategory(): void {
-    this.jokeService.getJokesCategory()
-      .subscribe(cat => this.jokes = cat);      
+    this.jokeService.getJokes()
+    .subscribe(joke => joke.forEach(e => this.categories.push(e.category)));      
   }
 
   add(content: string, category: string): void {

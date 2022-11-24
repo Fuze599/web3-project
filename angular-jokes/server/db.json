@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "duncan",
+      "country": "australia",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "username": "sarah",
+      "country": "england",
+      "password": "123"
+    },
+    {
+      "id": 3,
+      "username": "admin",
+      "country": "usa",
+      "password": "123"
+    },
+    {
+      "username": "test2",
+      "password": "123",
+      "id": 4
+    }
+  ],
+  "jokes": [
+    {
+      "content": "joke1 farce",
+      "category": "farce",
+      "like": 24,
+      "date": "date1",
+      "id": "1"
+    },
+    {
+      "content": "joke2 farce",
+      "category": "farce",
+      "like": 51,
+      "date": "date2",
+      "id": "2"
+    },
+    {
+      "content": "joke3 info",
+      "category": "informatique",
+      "like": 9,
+      "date": "Tue Nov 15 2022",
+      "id": "3"
+    },
+    {
+      "content": "joke4 anecdote",
+      "category": "anecdote",
+      "like": 2,
+      "date": "Tue Nov 18 2022",
+      "id": "4"
+    }
+  ]
+}
