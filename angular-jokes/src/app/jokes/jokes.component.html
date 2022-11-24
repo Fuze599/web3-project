@@ -3,9 +3,9 @@
     <select ngModel (ngModelChange)="filter($event)" class="form-control" id="joke-category">
             <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
     </select>
-    <button type="submit" (click)="resetFilteredJokes();"></button>
+    <button type="submit" (click)="resetFilteredJokes();">Clear</button>
 </div>
-<div *ngFor="let joke of filteredJokes" routerLink="/jokes/{{joke.id}}">
+<div class="listJokes" *ngFor="let joke of filteredJokes" routerLink="/jokes/{{joke.id}}">
     <p>{{joke.id}} - {{joke.content}}</p>
     <p>{{joke.like}} likes</p>
 </div>

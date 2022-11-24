@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Joke } from '../joke';
 import { JokeService } from '../joke.service';
 
 @Component({
   selector: 'app-jokes',
   templateUrl: './jokes.component.html',
-  styleUrls: ['./jokes.component.css']
+  styleUrls: ['./jokes.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class JokesComponent implements OnInit{
 
@@ -13,12 +15,11 @@ export class JokesComponent implements OnInit{
   filteredJokes: Joke[] = [];
   categories: string[] = [];
 
-  constructor(private jokeService: JokeService) { }
+  constructor(private jokeService: JokeService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.getJokes();
     this.getJokesCategory();
-    this.resetFilteredJokes();
+    this.getJokes();
   }
 
   getJokes(): void {
@@ -37,5 +38,6 @@ export class JokesComponent implements OnInit{
 
   filter(cat:string): void {
     this.filteredJokes = this.jokes.filter(j => j.category === cat);
+    this.cdr.detectChanges()
   }
 }
