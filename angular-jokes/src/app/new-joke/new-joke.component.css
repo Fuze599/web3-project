@@ -4,7 +4,8 @@ form {
   margin: 50px;
 }
 
-div {
+.add-button, .form-control, .textarea-add-joke {
   text-align: center;
   margin: 15px;
+  float: none;
 }

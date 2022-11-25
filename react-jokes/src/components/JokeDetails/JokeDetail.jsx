@@ -44,7 +44,7 @@ const JokeDetail = () => {
   return (
       <div style={formStyle}>
         <h3 style={titleStyle}>{joke.content}</h3>
-        <p>Category : {joke.category}</p>
+        <p>Catégorie : {joke.category}</p>
         <p>Date : {joke.date}</p>
         <p>Likes : {joke.like}</p>
         <button id="likeBtn" onClick={handleLikeButton}>Like</button>

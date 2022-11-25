@@ -6,3 +6,9 @@
   cursor: pointer;
   border-radius: 4px;
 }
+
+button {
+  float: none;
+  padding: 1px 10px;
+  margin-left: 10px;
+}

@@ -7,6 +7,7 @@ import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom"
 import Connection from "components/Connection/Connection"
 import { Context } from '../../contexts/JokesContext'
 import { useContext } from "react"
+import './App.css'
 
 const App = () => {
   const { isConnected, setIsConnected } = useContext(Context)
@@ -42,12 +43,12 @@ const App = () => {
       {
         isConnected ?
           <div style={navbarStyle}>
-            <Link style={navbarElementStyle} to="/">Home</Link>
-            <Link style={navbarElementStyle} to="/jokes">Jokes</Link>
-            <Link style={navbarElementStyle} to="/create">Create new joke</Link>
-            <Link style={navbarElementStyle} to="/about">About</Link>
+            <Link style={navbarElementStyle} to="/">Accueil</Link>
+            <Link style={navbarElementStyle} to="/jokes">Blagues</Link>
+            <Link style={navbarElementStyle} to="/create">Créer une nouvelle blague</Link>
+            <Link style={navbarElementStyle} to="/about">À propos</Link>
             <span style={navbarElementStyle} onClick={disconnect}>
-              Disconnect
+              Se déconnecter
             </span>
           </div>
           :

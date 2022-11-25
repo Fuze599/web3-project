@@ -21,7 +21,7 @@ export class JokesComponent implements OnInit{
   ngOnInit(): void {
 
     const isConnected = localStorage.getItem("isConnected");
-    
+
     if (isConnected === null) {
       this.router.navigate(["/login"]);
       return;
@@ -41,8 +41,9 @@ export class JokesComponent implements OnInit{
   }
 
   getJokesCategory(): void {
-    this.jokeService.getJokesCategory()
-      .subscribe(cat => this.categories = cat);      
+    // this.jokeService.getJokesCategory()
+      // .subscribe(cat => this.categories = cat);
+    this.categories = this.jokeService.getJokesCategory();
   }
 
   resetFilteredJokes(): void {

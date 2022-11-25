@@ -19,7 +19,7 @@ export class NewJokeComponent implements OnInit {
 
   ngOnInit(): void {
     const isConnected = localStorage.getItem("isConnected");
-    
+
     if (isConnected === null) {
       this.router.navigate(["/login"]);
       return;
@@ -29,16 +29,17 @@ export class NewJokeComponent implements OnInit {
   }
 
   getJokesCategory(): void {
-    this.jokeService.getJokesCategory()
-      .subscribe(cat => this.jokes = cat );      
+    // this.jokeService.getJokesCategory()
+      // .subscribe(cat => this.jokes = cat );
+    this.jokes = this.jokeService.getJokesCategory()
   }
 
   add(content: string, category: string): void {
-    if (!content.trim()) {       
+    if (!content.trim()) {
       return; }
     this.jokeService.addJoke({ content: content, category: category, like: 0, date: new Date(Date.now()).toISOString() } as Joke)
       .subscribe();
-    alert("new joke added");
+    alert("Nouvelle blague ajoutée");
   }
 
   jokeTextEntered: string = "";

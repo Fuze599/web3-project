@@ -19,33 +19,33 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     const isConnected = localStorage.getItem("isConnected");
-    
+
     if (isConnected !== null) {
       this.router.navigate(["/home"]);
     }
   }
 
-  
+
 
   connect(pseudo: string, password: string): void {
     this.userService.getUser(pseudo!)
-      .subscribe(user => {        
-        
+      .subscribe(user => {
+
         if (user.length === 0) {
-          alert("Incorrect pseudo or passsword !");
+          alert("Pseudo ou mot de passe incorrect !");
           return;
         }
 
         if (user[0].password !== password) {
-          alert("Incorrect pseudo or passsword !");
+          alert("Pseudo ou mot de passe incorrect !");
           return;
         }
-        
+
         localStorage.setItem("isConnected", "true");
-    
+
         window.location.reload();
         this.router.navigate(['/home']);
-        
+
       });
   }
 

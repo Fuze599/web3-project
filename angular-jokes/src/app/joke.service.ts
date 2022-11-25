@@ -34,12 +34,14 @@ export class JokeService {
   }
 
   /** GET categorie jokes from the server */
-  getJokesCategory(): Observable<string[]> {
-    return this.http.get<string[]>(this.jokesCategoriesUrl)
-      .pipe(
-        tap(_ => console.log('fetched jokesCategory')),
-        catchError(this.handleError<string[]>('getJokesCategory', []))
-       );
+  // getJokesCategory(): Observable<string[]> {
+  getJokesCategory(): string[] {
+    // return this.http.get<string[]>(this.jokesCategoriesUrl)
+    //   .pipe(
+    //     tap(_ => console.log('fetched jokesCategory')),
+    //     catchError(this.handleError<string[]>('getJokesCategory', []))
+    //    );
+    return ["farce", "informatique", "blagues de toto", "anecdote", "chuck Norris facts", "autres"]
   }
 
   /** GET joke by id. Will 404 if id not found */

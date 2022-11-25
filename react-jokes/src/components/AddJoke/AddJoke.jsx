@@ -35,22 +35,24 @@ const AddJoke = () => {
 
   const inputStyle = {
     textAlign: "center",
-    margin: "10px"
+    margin: "10px",
+    float: "none"
   }
 
   return (
     <div>
-      <h1>Create a new joke</h1>
+      <h1>Créer une nouvelle blague</h1>
       <form style={formStyle} onSubmit={addJoke}>
         <textarea style={inputStyle} rows="10" cols="70" value={jokeContent} onChange={handleContentChange} />
         <br />
+        <span>Catégorie : </span>
         <select style={inputStyle} value={jokeCategory} onChange={handleCategoryChange}>
           {categories.map((category) => (
             <option key={category.value} value={category.value}>{category.label}</option>
           ))}
         </select>
         <br />
-        <button style={inputStyle} type="submit">Add Joke</button>
+        <button style={inputStyle} type="submit">Ajouter une blague</button>
       </form>
     </div>
   )
