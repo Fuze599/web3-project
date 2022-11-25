@@ -1,67 +1,53 @@
 {
   "jokes": [
     {
-      "content": "Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague",
-      "category": "blagues de toto",
-      "date": "Tue Nov 22 2022",
-      "id": "5c3c474a-814c-429e-833c-8e96887655a5",
-      "like": 15
+      "content": "joke1 farce",
+      "category": "farce",
+      "like": 12,
+      "date": "Tue Nov 15 2022",
+      "id": "1"
     },
     {
-      "content": "etettetete",
-      "category": "",
-      "date": "Tue Nov 22 2022",
-      "id": "c9c6ffa3-a117-4cd1-b834-43d9d8d02b0c",
-      "like": 10
+      "content": "joke2 farce",
+      "category": "farce",
+      "like": 50,
+      "date": "Tue Nov 15 2022",
+      "id": "2"
     },
     {
-      "content": "TEST",
-      "category": "",
-      "date": "Tue Nov 22 2022",
-      "id": "6292ec03-3894-4245-ad2a-2f9344a55db0",
-      "like": 9
+      "content": "joke3 info",
+      "category": "informatique",
+      "like": 8,
+      "date": "Tue Nov 15 2022",
+      "id": "3"
     },
     {
-      "content": "",
-      "category": "",
-      "date": "Fri Nov 25 2022",
-      "id": "115c0f38-5ad7-4a85-9ce4-93bede32acac",
-      "like": 0
-    },
-    {
-      "content": "",
-      "category": "blagues de toto",
-      "date": "Fri Nov 25 2022",
-      "id": "f8d16c7d-913e-485c-bacd-ca403374fd63",
-      "like": 0
-    },
-    {
-      "content": "Test",
-      "category": "",
-      "date": "Fri Nov 25 2022",
-      "id": "3aa8f194-6bc1-4b27-808d-ef9ac7339e24",
-      "like": 0
-    },
-    {
-      "content": "test",
-      "category": "",
+      "content": "joke4 anecdote",
+      "category": "anecdote",
       "like": 0,
-      "date": "2022-11-25T10:41:18.642Z",
-      "id": "-JL1etz"
+      "date": "Tue Nov 18 2022",
+      "id": "4"
     },
     {
-      "content": "dsqcdqz",
-      "category": "",
-      "like": 0,
-      "date": "2022-11-25T10:41:30.432Z",
-      "id": "GfBjufo"
+      "content": "etsyrudtfiyxutj",
+      "category": "anecdote",
+      "date": "Fri Nov 18 2022",
+      "id": "d873f534-f50e-451f-91fc-9dd4e536599a",
+      "like": 3
     },
     {
-      "content": "testos",
-      "category": "",
+      "content": "ziz",
+      "category": "farce",
       "like": 0,
-      "date": "2022-11-25T10:41:41.076Z",
-      "id": "s7KGY-u"
+      "date": "2022-11-24T15:05:45.592Z",
+      "id": "A8XCVQ1"
+    },
+    {
+      "content": "autres",
+      "category": "autres",
+      "like": 0,
+      "date": "2022-11-24T15:24:41.240Z",
+      "id": "8Uj7x1T"
     }
   ],
   "users": [
@@ -70,5 +56,13 @@
       "pseudo": "eric",
       "password": "eric"
     }
+  ],
+  "categories": [
+    "farce",
+    "informatique",
+    "blagues de toto",
+    "anecdote",
+    "chuck Norris facts",
+    "autres"
   ]
 }
