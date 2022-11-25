@@ -32,7 +32,6 @@ import { DisconnectComponent } from './disconnect/disconnect.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-  ],
   providers: [],
   bootstrap: [AppComponent]
 })
