@@ -1,0 +1,14 @@
+
+.joke {
+  margin: 20px;
+  padding: 0px 10px 0px 10px;
+  border: 2px solid #4299e1;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button {
+  float: none;
+  padding: 1px 10px;
+  margin-left: 10px;
+}

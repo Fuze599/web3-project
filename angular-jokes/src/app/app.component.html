@@ -1,0 +1,8 @@
+<nav *ngIf="isConnected">
+    <a routerLink="/home">Accueil</a>
+    <a routerLink="/jokes">Blagues</a>
+    <a routerLink="/create">Créer une nouvelle blague</a>
+    <a routerLink="/about">À propos</a>
+    <a routerLink="/disconnect">Se déconnecter</a>
+</nav>
+<router-outlet></router-outlet>
