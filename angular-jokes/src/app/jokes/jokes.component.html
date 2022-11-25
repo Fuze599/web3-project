@@ -5,7 +5,7 @@
     </select>
     <button type="submit" (click)="resetFilteredJokes();">Reset</button>
 </div>
-<div *ngFor="let joke of filteredJokes" routerLink="/jokes/{{joke.id}}">
+<div class="joke" *ngFor="let joke of filteredJokes" routerLink="/jokes/{{joke.id}}">
     <p>{{joke.id}} - {{joke.content}}</p>
     <p>{{joke.like}} likes</p>
 </div>

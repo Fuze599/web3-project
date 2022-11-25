@@ -1,0 +1,32 @@
+{
+  "jokes": [
+    {
+      "content": "Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague Blague",
+      "category": "blagues de toto",
+      "date": "Tue Nov 22 2022",
+      "id": "5c3c474a-814c-429e-833c-8e96887655a5",
+      "like": 13
+    },
+    {
+      "content": "etettetete",
+      "category": "",
+      "date": "Tue Nov 22 2022",
+      "id": "c9c6ffa3-a117-4cd1-b834-43d9d8d02b0c",
+      "like": 10
+    },
+    {
+      "content": "TEST",
+      "category": "",
+      "date": "Tue Nov 22 2022",
+      "id": "6292ec03-3894-4245-ad2a-2f9344a55db0",
+      "like": 9
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "pseudo": "eric",
+      "password": "eric"
+    }
+  ]
+}
