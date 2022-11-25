@@ -1,0 +1,29 @@
+<h1>Créer une nouvelle blague</h1>
+
+<form #newJokeForm="ngForm">
+
+  <div class="form-group">
+<!--    <label for="new-joke-content">Joke content: </label>-->
+<!--    <span [hidden]="!newJokeForm.form.invalid" style="color: red;"><em>required</em></span> <br>-->
+
+    <textarea ng-model="jokeTextArea" class="textarea-add-joke" id="new-joke-content" rows="10" cols="70" #jokeContent="ngModel"
+      required
+      [(ngModel)]="jokeTextEntered" name="jokeText"> </textarea>
+  </div>
+
+  <div class="form-group">
+      <label for="new-joke-category">Catégorie : </label>
+
+      <select class="form-control" id="new-joke-category"
+          required
+          #category>
+              <option *ngFor="let jokeCat of jokes" [value]="jokeCat">{{jokeCat}}</option>
+      </select>
+  </div>
+
+  <!-- (click) passes input value to add() and then clears only the input of textarea -->
+  <button type="submit" class="add-button" [disabled]="!newJokeForm.form.valid"
+    (click)="add(jokeContent.value, category.value); jokeTextEntered=''">
+    Ajouter une blague
+  </button>
+</form>

@@ -1,4 +1,4 @@
-.likeButton {
+button {
   display: inline-block;
   outline: 0;
   border: 0;
@@ -15,15 +15,14 @@
   margin-top: -52px;
 }
 
-.likeButton:disabled {
+button:disabled {
   background-color: #2d71a8;
   border-bottom: 0px solid #206296;
   padding: 10px 16px;
   cursor: default;
 }
 
-
-.likeButton:hover {
-  border-bottom: 0px solid #2b6cb0;
+button:hover {
+  border-bottom: 0;
   padding: 10px 16px;
 }

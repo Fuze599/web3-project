@@ -17,7 +17,6 @@ const ProviderWrapper = (props) => {
 			.catch(error => console.warn(error))
 
 		if (localStorage.getItem("isConnected")) {
-			console.log(localStorage.getItem("isConnected"));
 			setIsConnected(true)
 		}
 	}
@@ -64,9 +63,36 @@ const ProviderWrapper = (props) => {
 			.catch(error => console.warn(error))
 	}
 
+	const categories = [
+		{
+			label: "farce",
+			value: "farce",
+		},
+		{
+			label: "informatique",
+			value: "informatique",
+		},
+		{
+			label: "blagues de toto",
+			value: "blagues de toto",
+		},
+		{
+			label: "anecdote",
+			value: "anecdote",
+		},
+		{
+			label: "chuck Norris facts",
+			value: "chuck Norris facts",
+		},
+		{
+			label: "autres",
+			value: "autres",
+		},
+	]
+
 	return (
 		<>
-			<Context.Provider value={{ jokes, createJoke, getJoke, likeJoke, getUser, isConnected, setIsConnected }}>
+			<Context.Provider value={{ jokes, createJoke, getJoke, likeJoke, getUser, isConnected, setIsConnected, categories }}>
 				{props.children}
 			</Context.Provider>
 		</>

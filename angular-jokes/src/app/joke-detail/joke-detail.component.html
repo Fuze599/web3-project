@@ -1,0 +1,7 @@
+<div *ngIf="joke">
+    <h3>{{joke.content}}</h3>
+    <p>Catégorie : {{joke.category}}</p>
+    <p>Date : {{joke.date | date:'medium':'UTC+1' }}</p>
+    <p>Likes : {{joke.like || 0}}</p>
+    <button class="likeButton" type="button" (click)="increaseLike()" [disabled]="liked">Like</button>
+</div>

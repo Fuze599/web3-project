@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const baseUrl = "//localhost:3001/jokes"
+const baseUrl = "//localhost:3002/jokes"
 
 const getAll = () => axios.get(baseUrl).then(response => response.data)
 

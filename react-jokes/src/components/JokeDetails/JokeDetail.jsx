@@ -5,7 +5,6 @@ import './JokeDetail.css'
 
 const JokeDetail = () => {
   const [joke, setJoke] = useState({})
-  const [likes, setLikes] = useState(0)
   const { getJoke, likeJoke } = useContext(JokesContext)
 
   const jokeId = useParams().id
@@ -13,18 +12,17 @@ const JokeDetail = () => {
     const loadJoke = async () => {
       const newJoke = await getJoke(jokeId)
       setJoke(newJoke)
-      setLikes(newJoke.like)
     }
     loadJoke()
   }, [getJoke, jokeId])
 
   const handleLikeButton = () => {
-    const newLikes = joke.like + 1
+    const newLike = joke.like + 1
     const updatedJoke = {
       ...joke,
-      "like": newLikes
+      "like": newLike
     }
-    setLikes(newLikes)
+
     likeJoke(joke.id, updatedJoke)
     document.getElementById("likeBtn").disabled = true
   }
@@ -46,10 +44,10 @@ const JokeDetail = () => {
   return (
       <div style={formStyle}>
         <h3 style={titleStyle}>{joke.content}</h3>
-        <p>Category : {joke.category}</p>
+        <p>Catégorie : {joke.category}</p>
         <p>Date : {joke.date}</p>
-        <p>Likes : {likes}</p>
-        <button className="likeButton" id="likeBtn" onClick={handleLikeButton}>Like</button>
+        <p>Likes : {joke.like}</p>
+        <button id="likeBtn" onClick={handleLikeButton}>Like</button>
     </div>)
 }
 

@@ -11,18 +11,19 @@ npm i
 Installations for angular-jokes :
 
 ```
-npm i --force
+npm i
 ```
 
-To launch react-jokes (2 terminals) : 
+To launch react-jokes (2 terminals placed in web3-project/react-jokes) : 
 
 ```
 npm start
 npm run server
 ```
 
-To launch angular-jokes : 
+To launch angular-jokes (2 terminals placed in web3-project/angular-jokes): 
 
 ```
-ng serve --open
+npm run server
+npm start
 ```

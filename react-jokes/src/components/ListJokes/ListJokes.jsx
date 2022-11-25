@@ -1,10 +1,9 @@
 import { useContext, useState, useEffect } from "react"
 import { Context as JokesContext } from '../../contexts/JokesContext'
 import { useNavigate } from "react-router-dom"
-const options = require('./Categories')
 
 const ListJokes = () => {
-  const { jokes } = useContext(JokesContext)
+  const { jokes, categories } = useContext(JokesContext)
   const [filteredJokes, setFilteredJokes] = useState([])
   const navigate = useNavigate()
 
@@ -14,6 +13,12 @@ const ListJokes = () => {
     border: "2px solid DodgerBlue",
     cursor: "pointer",
     borderRadius: "4px"
+  }
+
+  const clearButtonStyle = {
+    float: "none",
+    padding: "1px 10px",
+    marginLeft: "10px"
   }
 
   useEffect(() => {
@@ -30,13 +35,13 @@ const ListJokes = () => {
 
   return (
     <>
-      <h1>All jokes</h1>
+      <h1>Toutes les blagues</h1>
       <select onChange={handleFilterByCategory}>
-        {options.map((option) => (
+        {categories.map((option) => (
           <option key={option.value} value={option.value}>{option.label}</option>
         ))}
       </select>
-      <button onClick={clearFilters}>Clear</button>
+      <button style={clearButtonStyle} onClick={clearFilters}>Réinitialiser</button>
       {filteredJokes.map((joke, index) => (
         <div onClick={() => navigate(`/jokes/${joke.id}`)} key={joke.id} style={jokesStyle}>
           <p>{index + 1} - {joke.content}</p>

@@ -28,7 +28,7 @@ const Connection = () => {
     if (user && user.length === 1 && user[0].password === password) {
       connectUser()
     } else {
-      console.log("Incorrect password")
+      alert("Incorrect pseudo or passsword !")
     }
   }
 
@@ -57,13 +57,13 @@ const Connection = () => {
 
   return (
     <div>
-      <h1 style={loginTitleStyle}>Login</h1>
+      <h1 style={loginTitleStyle}>Se connecter</h1>
       <form style={formStyle}>
         <label htmlFor="pseudo">Pseudo :</label>
         <br/>
         <input style={inputStyle} onChange={handlerPseudoChange} type="text" id="pseudo" name="pseudo" required></input>
         <br/>
-        <label htmlFor="password">Password :</label>
+        <label htmlFor="password">Mot de passe :</label>
         <br/>
         <input style={inputStyle} onChange={handlerPasswordChange} type="password" id="password" name="password" required></input>
         <br/>

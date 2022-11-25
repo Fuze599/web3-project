@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <h1>Accueil</h1>
       <p style={homeParagraphStyle}>Ce site vous permet de lire, envoyer et liker des blagues de toutes catégories</p>
     </>
   )

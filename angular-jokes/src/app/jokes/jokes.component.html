@@ -1,0 +1,11 @@
+<h1>Toutes les blagues</h1>
+<div class="form-group">
+    <select ngModel (ngModelChange)="filter($event)" class="form-control" id="joke-category">
+            <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+    </select>
+    <button type="submit" (click)="resetFilteredJokes();">Réinitialiser</button>
+</div>
+<div class="joke" *ngFor="let joke of filteredJokes" routerLink="/jokes/{{joke.id}}">
+    <p>{{joke.id}} - {{joke.content}}</p>
+    <p>{{joke.like}} likes</p>
+</div>
