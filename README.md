@@ -14,16 +14,20 @@ Installations for angular-jokes :
 npm i
 ```
 
-To launch react-jokes (2 terminals placed in web3-project/react-jokes) : 
+To launch database (terminal places in web3-project/) 
+(react-jokes & angular-jokes have the same DB) :
+```
+json-server -p3002 --watch db.json
+```
+
+To launch react-jokes (terminal placed in web3-project/react-jokes) : 
 
 ```
 npm start
-npm run server
 ```
 
-To launch angular-jokes (2 terminals placed in web3-project/angular-jokes): 
+To launch angular-jokes (terminal placed in web3-project/angular-jokes): 
 
 ```
-npm run server
 npm start
 ```
